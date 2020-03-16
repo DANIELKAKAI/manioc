@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>manioc 21 farmers</title>
+	{% load data_tags %}
+</head>
+<body>
+
+	<table style="width:100%">
+		<tr>
+			<th>first name</th>
+			<th>surname</th>
+			<th>COOP</th>
+			<th>role</th>
+		</tr>
+
+		{% for farmer in farmers %}
+		<tr>
+			<td>{{farmer|get_value:'details/firstName'}}</td>
+			<td>{{farmer|get_value:'details/surName'}}</td>
+			<td>{{farmer|get_value:'coop'}}</td>
+			<td>{{farmer|get_value:'role'}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+
+</body>
+</html>
