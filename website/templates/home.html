@@ -3,17 +3,23 @@
 <head>
 	<title>manioc 21 farmers</title>
 	{% load data_tags %}
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 <body>
+	<h3>Farmers</h3>
 
-	<table style="width:100%">
+	<table class="table table-bordered">
+
+		<thead>
 		<tr>
 			<th>first name</th>
 			<th>surname</th>
 			<th>COOP</th>
 			<th>role</th>
 		</tr>
+	</thead>
 
+	<tbody>
 		{% for farmer in farmers %}
 		<tr>
 			<td>{{farmer|get_value:'details/firstName'}}</td>
@@ -23,6 +29,7 @@
 		</tr>
 		{% endfor %}
 	</table>
+</tbody>
 
 </body>
 </html>

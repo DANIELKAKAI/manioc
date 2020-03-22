@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>manioc 21 fields</title>
+	{% load data_tags %}
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+	<h3>Fields</h3>
+
+	<table class="table table-bordered">
+
+		<thead>
+		<tr>
+			<th>Field name</th>
+			<th>COOP</th>	
+		</tr>
+	</thead>
+
+	<tbody>
+		{% for field in fields %}
+		<tr>
+			<td>{{field|get_value:'fieldName'}}</td>
+			<td>{{field|get_value:'coop'}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</tbody>
+
+</body>
+</html>
