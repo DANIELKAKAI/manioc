@@ -11,3 +11,4 @@ def home(request):
 def fields(request):
 	fields = Field.objects.last().data
 	return render(request,"fields.html",{'fields':fields})
+
