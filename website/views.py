@@ -1,14 +1,13 @@
 from django.shortcuts import render
 import requests
+from website.models import Farmer,Field
 # Create your views here.
 
 def home(request):
-	res = requests.get('https://api.ona.io/api/v1/data/401455',auth=('danielkimassai','mylenana'))
-	farmers = res.json()
+	farmers = Farmer.objects.last().data
 	return render(request,"home.html",{'farmers':farmers})
 
 
 def fields(request):
-	res = requests.get('https://api.ona.io/api/v1/data/401002',auth=('danielkimassai','mylenana'))
-	fields = res.json()
+	fields = Field.objects.last().data
 	return render(request,"fields.html",{'fields':fields})
